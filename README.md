@@ -5,3 +5,4 @@ L'objectif de ce projet est d'apprendre à utiliser l'API de Spotify. Pour cela,
 
 ## Sources
 [Spotify Node API](https://www.npmjs.com/package/spotify-web-api-node)
+[Manipulation d'image avec JIMP](https://youtu.be/St_oXhobdH0)
