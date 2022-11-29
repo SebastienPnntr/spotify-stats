@@ -11,7 +11,7 @@ const generateView = (req, res) => {
   spotifyApi.setAccessToken(req.query.access_token);
 
   // Get 6m top artists
-  /*spotifyApi.getMyTopArtists()
+  spotifyApi.getMyTopArtists()
     .then(function (data) {
       let topArtists = data.body.items;
       console.log(topArtists);
@@ -26,7 +26,7 @@ const generateView = (req, res) => {
       console.log(topTracks);
     }, function (err) {
       console.log('Something went wrong!', err);
-    });*/
+    });
 
   res.render('generate', {
 
