@@ -9,23 +9,18 @@ const generateView = (req, res) => {
     spotifyApi.getMyTopArtists()
   .then(function(data) {
     let topArtists = data.body.items;
-    console.log(topArtists);
-  }, function(err) {
-    console.log('Something went wrong!', err);
-  });
-
-  // Get 6m top tracks
-  spotifyApi.getMyTopTracks()
-  .then(function(data) {
-    let topTracks = data.body.items;
-    console.log(topTracks);
-  }, function(err) {
-    console.log('Something went wrong!', err);
-  });
-
+    let listArtist = [];
+    topArtists.forEach(element => {
+      listArtist.push(element.name);
+    });
+    console.log(listArtist);
     res.render('generate', {
-
+      groups: listArtist
     })
+  }, function(err) {
+    console.log('Something went wrong!', err);
+    res.redirect('home');
+  });
 }
 
 module.exports = {
