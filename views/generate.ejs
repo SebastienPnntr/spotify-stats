@@ -28,8 +28,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-10 mx-auto">
-                    <div class="text-center position-relative" id="img">
+                    <div class="text-center position-relative">
                         <img class="img-fluid" src="img/mockup-copyright.png" style="width: 800px;">
+                        <ul id="txt-img">
+                        </ul>
                     </div>
                 </div>
                 <div class="col-md-8 text-center text-md-start mx-auto">
@@ -67,19 +69,18 @@
     <script src="js/startup-modern.js"></script>
     <script>
         function generateImage(){
-            let imgDiv = document.getElementById('img');
+            let imgDiv = document.getElementById('txt-img');
             let groupsHtml = "";
-            let prct = 25;
             let counter = 0;
             let groups = <%- JSON.stringify(groups) %>
             groups.forEach(element => {
                 if(counter<11){
-                    groupsHtml += "<div class='image-center-text' style='top:"+prct+"%; color: #"+Math.floor(Math.random()*16777215).toString(16)+";'><strong>"+element+"</strong></div>";
-                    prct+=5;
+                    groupsHtml += "<li style='color: #"+Math.floor(Math.random()*16777215).toString(16)+";'>"+element+"</li>";
                     counter+=1;
                 }
             });
-            imgDiv.innerHTML += groupsHtml;
+            groupsHtml +="";
+            imgDiv.innerHTML = groupsHtml;
             }
     </script>
 </body>

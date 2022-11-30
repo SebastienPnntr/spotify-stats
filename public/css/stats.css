@@ -1,7 +1,11 @@
-.image-center-text{
-    position: absolute;
-  top: 25%;
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+
+#txt-img{
+  list-style: none;
+  position: absolute;
+  top: 37%;
   left: 50%;
   transform: translate(-50%, -25%);
-  font-size: 200%;
+  font-size: 150%;
+  font-family: 'Rubik Glitch', cursive;
 }
