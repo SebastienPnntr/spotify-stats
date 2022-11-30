@@ -4,7 +4,7 @@ var spotifyApi = new SpotifyWebApi();
 
 const generateView = (req, res) => {
   
-    if (req.query.access_token == "undefined") {
+    if (req.query.access_token == "undefined" || req.query.access_token == "") {
       res.redirect('home');
       throw 'You didn\'t accept the spotify accesss.';
     }
@@ -26,7 +26,6 @@ const generateView = (req, res) => {
   }, function(err) {
     console.log('Something went wrong!', err);
     res.redirect('home');
-    throw 'Something went wrong! '+ err;
   });
 }
 
