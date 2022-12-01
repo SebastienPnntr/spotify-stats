@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-10 mx-auto">
-                    <div class="text-center position-relative">
+                    <div class="text-center position-relative" id="capture">
                         <img class="img-fluid" src="img/mockup-copyright.png" style="width: 800px;">
                         <ul id="txt-img">
                         </ul>
@@ -67,6 +67,7 @@
     <script src="js/aos.min.js"></script>
     <script src="js/bs-init.js"></script>
     <script src="js/startup-modern.js"></script>
+    <script src="js/html2canvas.js"></script>
     <script>
         function generateImage(){
             let imgDiv = document.getElementById('txt-img');
@@ -81,7 +82,14 @@
             });
             groupsHtml +="";
             imgDiv.innerHTML = groupsHtml;
-            }
+            printing();
+        }
+        
+        function printing(){
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                document.body.appendChild(canvas)
+            });
+        }
     </script>
 </body>
 
