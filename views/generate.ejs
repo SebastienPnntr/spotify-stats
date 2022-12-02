@@ -50,9 +50,7 @@
                             <div class="modal-header">
                                 <h4 class="modal-title">Save your painting</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <div id="modal-img"></div>
-                            </div>
+                            <div class="modal-body"><img class="img-fluid img-modal" id="modal-img"></div>
                             <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
                         </div>
                     </div>
@@ -103,7 +101,7 @@
         
         function printing(){
             html2canvas(document.querySelector("#capture")).then(canvas => {
-                document.getElementById('modal-img').innerHTML = "<img src='"+canvas.toDataURL('image/png')+"'>";
+                document.getElementById('modal-img').src = canvas.toDataURL('image/png');
                 //document.getElementById('modal-img').appendChild(canvas);
             });
         }
